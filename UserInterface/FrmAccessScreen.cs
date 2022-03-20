@@ -22,6 +22,8 @@ namespace UserInterface
         BraceletManager braceletManager;
         double conclusion = 0, pi = 3.14;
         double bigDiameterPow, smallDiameterPow;
+
+
         public FrmAccessScreen()
         {
             InitializeComponent();
@@ -72,7 +74,7 @@ namespace UserInterface
             {
                 LblBigDiameter.Text = "00";
                 LblSmallDiameter.Text = "00";
-                LblPerimeterResult.Text = "00";
+                LblPerimeterResult.Text = "00"; ;
             }
 
         }
@@ -80,6 +82,22 @@ namespace UserInterface
         private void TxtBraceletSize_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void CmbDataType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (CmbDataType.Text== "API")
+            {
+                BtnDataEdit.Visible = false;
+                TxtBraceletSize.Clear();
+                return;
+            }
+            if (CmbDataType.Text == "MSSQL")
+            {
+                BtnDataEdit.Visible = true;
+                TxtBraceletSize.Clear();
+                return;
+            }
         }
 
         private async void BtnSentServer_Click(object sender, EventArgs e)
@@ -90,27 +108,34 @@ namespace UserInterface
                 return;
             }
 
-            var response = await ClientProcess.ClientExecuteAsync("https://kutez.com/testapi/get_diameter.php?size=" + TxtBraceletSize.Text, Method.GET, null);
-
-            richTextBox1.Text = response;
-            //var jsonTesT = JsonConvert.SerializeObject(bracelet);
-            //var classInstance = JsonConvert.DeserializeObject<ClassName>(response);
-
-            
-
-            return;
-
-
-            Bracelet bracelet = braceletManager.Get(TxtBraceletSize.Text.ConInt());
-
-            if (bracelet == null)
+            if (CmbDataType.Text == "API")
             {
-                MessageBox.Show(TxtBraceletSize.Text + " Numaralı Kayıta Ait Bir Veri Bulunamamıştır!\nEğer eklemek isterseniz Data Edit butonunu kullanabilirsiz.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                string response = await ClientProcess.ClientExecuteAsync("https://kutez.com/testapi/get_diameter.php?size=" + TxtBraceletSize.Text, Method.GET, null);
+
+                Conclusion classInstance = JsonConvert.DeserializeObject<Conclusion>(response);
+
+                LblBigDiameter.Text = classInstance.BigDiameter.ToString();
+                LblSmallDiameter.Text = classInstance.SmallDiameter.ToString();
             }
 
-            LblBigDiameter.Text = bracelet.BigDiameter.ToString();
-            LblSmallDiameter.Text = bracelet.SmallDiameter.ToString();
+            else if (CmbDataType.Text == "MSSQL")
+            {
+                Bracelet bracelet = braceletManager.Get(TxtBraceletSize.Text.ConInt());
+
+                if (bracelet == null)
+                {
+                    MessageBox.Show(TxtBraceletSize.Text + " Numaralı Kayıta Ait Bir Veri Bulunamamıştır!\nEğer eklemek isterseniz Data Edit butonunu kullanabilirsiz.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                LblBigDiameter.Text = bracelet.BigDiameter.ToString();
+                LblSmallDiameter.Text = bracelet.SmallDiameter.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Lütfen Data Type Şeçeneklerinden birini seçiniz.","Hata",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                return;
+            }
 
         }
 

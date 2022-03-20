@@ -44,7 +44,8 @@ namespace UserInterface
             this.BtnSentServer = new DataAccess.Concrete.RjButton();
             this.BtnCancel = new DataAccess.Concrete.RjButton();
             this.BtnDataEdit = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.CmbDataType = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,7 +53,7 @@ namespace UserInterface
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(118, 211);
+            this.label1.Location = new System.Drawing.Point(146, 230);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(98, 15);
             this.label1.TabIndex = 3;
@@ -62,7 +63,7 @@ namespace UserInterface
             // 
             this.TxtBraceletSize.BackColor = System.Drawing.Color.White;
             this.TxtBraceletSize.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtBraceletSize.Location = new System.Drawing.Point(222, 208);
+            this.TxtBraceletSize.Location = new System.Drawing.Point(250, 227);
             this.TxtBraceletSize.Name = "TxtBraceletSize";
             this.TxtBraceletSize.Size = new System.Drawing.Size(192, 23);
             this.TxtBraceletSize.TabIndex = 4;
@@ -73,7 +74,7 @@ namespace UserInterface
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(120, 308);
+            this.label2.Location = new System.Drawing.Point(148, 311);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 15);
             this.label2.TabIndex = 5;
@@ -83,7 +84,7 @@ namespace UserInterface
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(100, 155);
+            this.label3.Location = new System.Drawing.Point(108, 140);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(362, 24);
             this.label3.TabIndex = 6;
@@ -93,7 +94,7 @@ namespace UserInterface
             // 
             this.LblBigDiameter.AutoSize = true;
             this.LblBigDiameter.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblBigDiameter.Location = new System.Drawing.Point(222, 308);
+            this.LblBigDiameter.Location = new System.Drawing.Point(250, 311);
             this.LblBigDiameter.Name = "LblBigDiameter";
             this.LblBigDiameter.Size = new System.Drawing.Size(23, 15);
             this.LblBigDiameter.TabIndex = 7;
@@ -103,7 +104,7 @@ namespace UserInterface
             // 
             this.LblSmallDiameter.AutoSize = true;
             this.LblSmallDiameter.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblSmallDiameter.Location = new System.Drawing.Point(391, 308);
+            this.LblSmallDiameter.Location = new System.Drawing.Point(429, 311);
             this.LblSmallDiameter.Name = "LblSmallDiameter";
             this.LblSmallDiameter.Size = new System.Drawing.Size(23, 15);
             this.LblSmallDiameter.TabIndex = 9;
@@ -113,7 +114,7 @@ namespace UserInterface
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(273, 308);
+            this.label6.Location = new System.Drawing.Point(311, 311);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(112, 15);
             this.label6.TabIndex = 8;
@@ -123,7 +124,7 @@ namespace UserInterface
             // 
             this.LblPerimeterResult.AutoSize = true;
             this.LblPerimeterResult.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblPerimeterResult.Location = new System.Drawing.Point(271, 405);
+            this.LblPerimeterResult.Location = new System.Drawing.Point(301, 402);
             this.LblPerimeterResult.Name = "LblPerimeterResult";
             this.LblPerimeterResult.Size = new System.Drawing.Size(28, 18);
             this.LblPerimeterResult.TabIndex = 11;
@@ -133,7 +134,7 @@ namespace UserInterface
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(118, 405);
+            this.label8.Location = new System.Drawing.Point(148, 402);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(147, 18);
             this.label8.TabIndex = 10;
@@ -142,7 +143,7 @@ namespace UserInterface
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(149, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(155, 13);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(265, 124);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -161,7 +162,7 @@ namespace UserInterface
             this.BtnCalculate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCalculate.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCalculate.ForeColor = System.Drawing.Color.White;
-            this.BtnCalculate.Location = new System.Drawing.Point(276, 342);
+            this.BtnCalculate.Location = new System.Drawing.Point(304, 339);
             this.BtnCalculate.Name = "BtnCalculate";
             this.BtnCalculate.Size = new System.Drawing.Size(138, 39);
             this.BtnCalculate.TabIndex = 13;
@@ -182,7 +183,7 @@ namespace UserInterface
             this.BtnSentServer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSentServer.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnSentServer.ForeColor = System.Drawing.Color.White;
-            this.BtnSentServer.Location = new System.Drawing.Point(276, 250);
+            this.BtnSentServer.Location = new System.Drawing.Point(304, 259);
             this.BtnSentServer.Name = "BtnSentServer";
             this.BtnSentServer.Size = new System.Drawing.Size(138, 39);
             this.BtnSentServer.TabIndex = 1;
@@ -203,7 +204,7 @@ namespace UserInterface
             this.BtnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCancel.Font = new System.Drawing.Font("MS Reference Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.BtnCancel.ForeColor = System.Drawing.Color.Brown;
-            this.BtnCancel.Location = new System.Drawing.Point(506, 1);
+            this.BtnCancel.Location = new System.Drawing.Point(533, 0);
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.Size = new System.Drawing.Size(61, 56);
             this.BtnCancel.TabIndex = 0;
@@ -219,29 +220,48 @@ namespace UserInterface
             this.BtnDataEdit.FlatAppearance.BorderSize = 0;
             this.BtnDataEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.BtnDataEdit.ForeColor = System.Drawing.Color.White;
-            this.BtnDataEdit.Location = new System.Drawing.Point(420, 208);
+            this.BtnDataEdit.Location = new System.Drawing.Point(448, 227);
             this.BtnDataEdit.Name = "BtnDataEdit";
             this.BtnDataEdit.Size = new System.Drawing.Size(75, 23);
             this.BtnDataEdit.TabIndex = 14;
             this.BtnDataEdit.Text = "Data Edit";
             this.BtnDataEdit.UseVisualStyleBackColor = false;
+            this.BtnDataEdit.Visible = false;
             this.BtnDataEdit.Click += new System.EventHandler(this.BtnDataEdit_Click);
             // 
-            // richTextBox1
+            // label4
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(104, 285);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(391, 168);
-            this.richTextBox1.TabIndex = 15;
-            this.richTextBox1.Text = "";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(168, 191);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(76, 15);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Data Type:";
+            // 
+            // CmbDataType
+            // 
+            this.CmbDataType.BackColor = System.Drawing.Color.White;
+            this.CmbDataType.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F);
+            this.CmbDataType.FormattingEnabled = true;
+            this.CmbDataType.Items.AddRange(new object[] {
+            "API",
+            "MSSQL"});
+            this.CmbDataType.Location = new System.Drawing.Point(250, 189);
+            this.CmbDataType.Name = "CmbDataType";
+            this.CmbDataType.Size = new System.Drawing.Size(97, 23);
+            this.CmbDataType.TabIndex = 16;
+            this.CmbDataType.Text = "API";
+            this.CmbDataType.SelectedIndexChanged += new System.EventHandler(this.CmbDataType_SelectedIndexChanged);
             // 
             // FrmAccessScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(569, 456);
-            this.Controls.Add(this.richTextBox1);
+            this.ClientSize = new System.Drawing.Size(596, 459);
+            this.Controls.Add(this.CmbDataType);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.BtnDataEdit);
             this.Controls.Add(this.BtnCalculate);
             this.Controls.Add(this.pictureBox1);
@@ -283,6 +303,7 @@ namespace UserInterface
         private System.Windows.Forms.PictureBox pictureBox1;
         private DataAccess.Concrete.RjButton BtnCalculate;
         private System.Windows.Forms.Button BtnDataEdit;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox CmbDataType;
     }
 }
