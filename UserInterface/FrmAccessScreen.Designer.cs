@@ -215,10 +215,10 @@ namespace UserInterface
             // 
             // BtnDataEdit
             // 
-            this.BtnDataEdit.BackColor = System.Drawing.Color.Brown;
+            this.BtnDataEdit.BackColor = System.Drawing.Color.ForestGreen;
             this.BtnDataEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnDataEdit.FlatAppearance.BorderSize = 0;
-            this.BtnDataEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.BtnDataEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.BtnDataEdit.ForeColor = System.Drawing.Color.White;
             this.BtnDataEdit.Location = new System.Drawing.Point(448, 227);
             this.BtnDataEdit.Name = "BtnDataEdit";

@@ -114,6 +114,12 @@ namespace UserInterface
 
                 Conclusion classInstance = JsonConvert.DeserializeObject<Conclusion>(response);
 
+                if (classInstance==null)
+                {
+                    MessageBox.Show("İnternet bağlantınızı kontrol ediniz!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
                 LblBigDiameter.Text = classInstance.BigDiameter.ToString();
                 LblSmallDiameter.Text = classInstance.SmallDiameter.ToString();
             }
