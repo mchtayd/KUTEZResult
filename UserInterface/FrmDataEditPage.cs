@@ -40,6 +40,11 @@ namespace UserInterface
         private void FrmDataEditPage_Load(object sender, EventArgs e)
         {
             DataDisplay();
+            if (DtgList.RowCount==0)
+            {
+                MessageBox.Show("Veri tabanına ulaşılamadığı için toblo boş döndürüldü.\nProgram dosyalarında KUTEZResult/SqlServer/KutezData.sql yolunu takip ederek Server bilgisayarınıza kurulum yapınız.","Hata",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                BtnAdd.Enabled = false;
+            }
         }
         void DataDisplay()
         {
