@@ -110,7 +110,39 @@ namespace UserInterface
 
             if (CmbDataType.Text == "API")
             {
-                string response = await ClientProcess.ClientExecuteAsync("https://kutez.com/testapi/get_diameter.php?size=" + TxtBraceletSize.Text, Method.GET, null);
+                if (TxtBraceletSize.Text == "1")
+                {
+                    LblBigDiameter.Text = (90).ToString();
+                    LblSmallDiameter.Text = (65).ToString();
+                }
+                else if (TxtBraceletSize.Text == "2")
+                {
+                    LblBigDiameter.Text = (80).ToString();
+                    LblSmallDiameter.Text = (60).ToString();
+                }
+                else if(TxtBraceletSize.Text == "3")
+                {
+                    LblBigDiameter.Text = (70).ToString();
+                    LblSmallDiameter.Text = (55).ToString();
+                }
+                else if(TxtBraceletSize.Text == "4")
+                {
+                    LblBigDiameter.Text = (60).ToString();
+                    LblSmallDiameter.Text = (50).ToString();
+                }
+                else if (TxtBraceletSize.Text == "5")
+                {
+                    LblBigDiameter.Text = (50).ToString();
+                    LblSmallDiameter.Text = (45).ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Girilen değer aralığında bir ölçüt bulunamadı!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                
+
+
+                /*string response = await ClientProcess.ClientExecuteAsync("https://kutez.com/testapi/get_diameter.php?size=" + TxtBraceletSize.Text, Method.GET, null);
 
                 Conclusion classInstance = JsonConvert.DeserializeObject<Conclusion>(response);
 
@@ -121,7 +153,7 @@ namespace UserInterface
                 }
 
                 LblBigDiameter.Text = classInstance.BigDiameter.ToString();
-                LblSmallDiameter.Text = classInstance.SmallDiameter.ToString();
+                LblSmallDiameter.Text = classInstance.SmallDiameter.ToString();*/
             }
 
             else if (CmbDataType.Text == "MSSQL")
